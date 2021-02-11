@@ -2752,10 +2752,10 @@ async function loadytClipper() {
         draft.speedMap[0].x = toTime;
         draft.cropMap[0].x = toTime;
         draft.speedMap = draft.speedMap.filter((speedPoint) => {
-          return speedPoint.x >= toTime;
+          return speedPoint.x > toTime;
         });
         draft.cropMap = draft.cropMap.filter((cropPoint) => {
-          return cropPoint.x >= toTime;
+          return cropPoint.x > toTime;
         });
       }
     } else if (type === 'end') {
@@ -2763,10 +2763,10 @@ async function loadytClipper() {
         draft.speedMap[draft.speedMap.length - 1].x = toTime;
         draft.cropMap[draft.cropMap.length - 1].x = toTime;
         draft.speedMap = draft.speedMap.filter((speedPoint) => {
-          return speedPoint.x <= toTime;
+          return speedPoint.x < toTime;
         });
         draft.cropMap = draft.cropMap.filter((cropPoint) => {
-          return cropPoint.x <= toTime;
+          return cropPoint.x < toTime;
         });
       }
     }
